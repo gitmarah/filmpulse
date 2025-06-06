@@ -62,7 +62,7 @@ const Profile = () => {
         <Header />
         <main className='flex flex-col items-center min-h-[100vh] w-full bg-[#f0ffff] pt-20 gap-[0.4rem] px-4'>
             <div className='w-full flex gap-3 items-center py-2 max-w-3xl'>
-                <img src={`${user?.imageUrl}`} alt="" className='w-[100px] h-[100px] rounded-full'/>
+                <img src={`${user?.imageUrl}`} alt="" className='w-[100px] h-[100px] rounded-full object-cover'/>
                 <div className='text-[#170000] flex-3/4 min-w-0'>
                     <h2 className='font-bold text-2xl text-ellipsis overflow-hidden whitespace-nowrap'>{user?.firstname} {user?.lastname}</h2>
                     <p className='text-ellipsis overflow-hidden'>{user?.email}</p>
