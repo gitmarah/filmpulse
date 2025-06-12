@@ -62,11 +62,11 @@ const Profile = () => {
         <Header />
         <main className='flex flex-col items-center min-h-[100vh] w-full bg-[#f0ffff] pt-20 gap-[0.4rem] px-4'>
             <div className='w-full flex gap-3 items-center py-2 max-w-3xl'>
-                <img src={`${user?.imageUrl}`} alt="" className='w-[100px] h-[100px] rounded-full object-cover'/>
+                <img src={`${user?.imageUrl}`} alt="" className='w-[90px] h-[90px] rounded-full object-cover'/>
                 <div className='text-[#170000] flex-3/4 min-w-0'>
-                    <h2 className='font-bold text-2xl text-ellipsis overflow-hidden whitespace-nowrap'>{user?.firstname} {user?.lastname}</h2>
-                    <p className='text-ellipsis overflow-hidden'>{user?.email}</p>
-                    <Link to="/edit-profile" className=''><button className='bg-[#da0009] text-[#fff1fc] mt-[0.4rem] py-1 px-3 rounded-sm font-bold cursor-pointer'>
+                    <h2 className='font-bold text-lg text-ellipsis overflow-hidden whitespace-nowrap'>{user?.firstname} {user?.lastname}</h2>
+                    <p className='text-ellipsis overflow-hidden text-[0.9rem]'>{user?.email}</p>
+                    <Link to="/edit-profile" className=''><button className='bg-[#da0009] text-[#fff1fc] mt-[0.4rem] py-1 px-3 rounded-sm font-bold cursor-pointer text-sm'>
                         Edit Profile
                     </button></Link>
                 </div>
@@ -74,7 +74,7 @@ const Profile = () => {
             {isLoading ? <p className='pt-20 text-center'>Loading...</p> : data && <div className='max-w-3xl'>
                 {data && sortedData.map(movie => <div key={movie._id} className='w-[100vw] max-w-3xl flex items-center justify-between gap-3 px-3 py-2 border-t-[1px] border-gray-400'>
                     <div>
-                        {(isChecking.status && isChecking.id === movie._id) ? <div className='bg-[#170000] py-2 px-4 rounded-sm'><Loader /></div> : movie.checked ? <MonitorCheck size={50} strokeWidth={2.5} color='#170000' className='cursor-pointer' onClick={() => checkMovie(movie._id)} /> : <Monitor size={50} strokeWidth={2.5} color='#170000' className='cursor-pointer' onClick={() => checkMovie(movie._id)}/>}
+                        {(isChecking.status && isChecking.id === movie._id) ? <div className='bg-[#170000] py-1 px-[0.35rem] rounded-sm'><Loader /></div> : movie.checked ? <MonitorCheck size={30} strokeWidth={2.5} color='#170000' className='cursor-pointer' onClick={() => checkMovie(movie._id)} /> : <Monitor size={30} strokeWidth={2.5} color='#170000' className='cursor-pointer' onClick={() => checkMovie(movie._id)}/>}
                     </div>
                     <Link to={`/${movie.type}/${movie.movieId}`} className='flex w-[70%] items-center gap-3 overflow-hidden'>
                         <img
@@ -89,7 +89,7 @@ const Profile = () => {
                         </div>
                     </Link>
                     <div>
-                        {(isDeleting.status && isDeleting.id === movie._id) ? <div className='bg-[#da0009] py-2 px-3 rounded-sm'><Loader /></div> : <Trash2 size={50} color='#da0009' strokeWidth={2.5} className='cursor-pointer' onClick={() => removeFromList(movie._id)}/>}
+                        {(isDeleting.status && isDeleting.id === movie._id) ? <div className='bg-[#da0009] py-1 px-[0.35rem] rounded-sm'><Loader /></div> : <Trash2 size={30} color='#da0009' strokeWidth={2.5} className='cursor-pointer' onClick={() => removeFromList(movie._id)}/>}
                     </div>
                 </div>)}
             </div>}

@@ -73,8 +73,8 @@ const EditProfile = () => {
             {displayMessage.message &&
             <DisplayMessage displayMessage={displayMessage} setDisplayMessage={setDisplayMesage}/>
             }
-            <h1 className="mb-4 font-bold text-2xl text-[#170000]">Edit Profile</h1>
-            <form onSubmit={updateUserProfile} className="flex flex-col items-center gap-[0.8rem] min-w-80">
+            <h1 className="mb-4 font-bold text-xl text-[#170000]">Edit Profile</h1>
+            <form onSubmit={updateUserProfile} className="flex flex-col items-center gap-[0.8rem] min-w-70">
             <div className="flex flex-col items-center -mt-2">
                 <img ref={profilephotoRef} className="w-[100px] h-[100px] object-cover rounded-full mb-1" src={user ? `${user.imageUrl}` : "/profileplaceholder.jpg"} alt="" />
                 <label htmlFor="profilephoto" className="bg-[#da0009] p-2 rounded-sm text-[#fff1fc] font-bold cursor-pointer transition-all hover:opacity-85">
@@ -91,12 +91,12 @@ const EditProfile = () => {
                 name="firstname"
                 value={formState.firstname}
                 autoFocus={true}
-                className="peer w-full border border-[#170000] focus:border-[#da0009] rounded-sm text-lg outline-none px-3 py-2"
+                className="peer w-full border border-[#ddd] inset-shadow-sm focus:border-[#da0009] rounded-sm text-[0.9rem] outline-none px-3 py-2"
                 onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleFormState(e)}
             />
             <label
                 htmlFor="firstname"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.firstname === "" && "top-[0.5rem] text-lg text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.firstname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.firstname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.firstname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Firstname
             </label>
@@ -107,21 +107,21 @@ const EditProfile = () => {
                 id="lastname"
                 name="lastname"
                 value={formState.lastname}
-                className="peer w-full border border-[#170000] focus:border-[#da0009] rounded-sm text-lg outline-none px-3 py-2"
+                className="peer w-full border border-[#ddd] inset-shadow-sm focus:border-[#da0009] rounded-sm text-[0.9rem] outline-none px-3 py-2"
                 onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleFormState(e)}
             />
             <label
                 htmlFor="lastname"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.lastname === "" && "top-[0.5rem] text-lg text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.lastname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.lastname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.lastname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Lastname
             </label>
             </div>
 
-            <button type="submit" className="bg-[#da0009] w-full py-2 text-lg font-black text-[#fff1fc] rounded-sm -mt-1 cursor-pointer transition-all hover:opacity-85 flex items-center justify-center">{isUpdating ? <Loader /> : "Update"}</button>
+            <button type="submit" className="bg-[#da0009] w-full py-2 text-[1rem] font-black text-[#fff1fc] rounded-sm -mt-1 cursor-pointer transition-all hover:opacity-85 flex items-center justify-center">{isUpdating ? <Loader /> : "Update"}</button>
         </form>
         <div className='w-full flex justify-center'>
-            <button onClick={() => navigate(-1)} className='bg-[#170000] text-[#fff1fc] px-4 rounded-sm font-bold py-2 flex w-fit items-center justify-center gap-1 hover:opacity-90 mt-5'>
+            <button onClick={() => navigate(-1)} className='bg-[#170000] text-[#fff1fc] px-4 rounded-sm font-bold py-2 flex w-fit items-center justify-center gap-1 hover:opacity-90 mt-5 text-[1rem]'>
                 <ChevronLeftCircle size={17} color='#fff1fc' strokeWidth={3} className='mt-[2px]' /> 
                 <p>Go Back</p>
             </button>

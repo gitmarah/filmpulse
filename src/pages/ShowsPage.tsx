@@ -24,7 +24,7 @@ const ShowsPage = () => {
                 {data && data.results.map((movie: generalShowType) => {
                     return(
                     <Link to={`/show/${movie.id}`}>
-                        <article className="flex-shrink-0 w-[120px] bg-[#170000] shadow-md rounded overflow-clip relative">
+                        <article className="flex-shrink-0 w-[100px] bg-[#170000] shadow-md rounded overflow-clip relative">
                             <img
                                 src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                                 alt={movie.name}

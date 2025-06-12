@@ -21,14 +21,14 @@ const StyledWrapper = styled.div`
   .bar {
     display: inline-block;
     width: 3px;
-    height: 20px;
+    height: 15px;
     background-color: rgba(255, 255, 255, .5);
     border-radius: 10px;
     animation: scale-up4 1s linear infinite;
   }
 
   .bar:nth-child(2) {
-    height: 35px;
+    height: 25px;
     margin: 0 5px;
     animation-delay: .25s;
   }

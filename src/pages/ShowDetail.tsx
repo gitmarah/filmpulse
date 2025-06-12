@@ -8,11 +8,13 @@ import { useAddFavoriteMutation, useGetFavoriteQuery } from '../redux/userApi'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../redux/store'
 import { useEffect, useState } from 'react'
+import Loader from '../components/Loader'
 import type { CompanyType, GenreType, watchlistMovieType } from '../components/types'
 
 const ShowDetail = () => {
     const [isInWatchList, setIsInWatchList] = useState<boolean>(false)
     const {id} = useParams();
+    const [isAdding, setIsAdding] = useState<boolean>(false)
     const user = useSelector((state: RootState) => state.user.user);
     const {data, isLoading} = useGetShowQuery(id ?? skipToken)
     let release_date: string = "";
@@ -41,7 +43,18 @@ const ShowDetail = () => {
             type: "show",
             checked: false
         }
-        await addFavorite(movieData);
+        try{
+            setIsAdding(true)
+            const result = await addFavorite(movieData);
+            if(result.data){
+                setIsAdding(false)
+            }
+            if(result.error){
+                setIsAdding(false)
+            }
+        } catch(err){
+            console.log(err)
+        }
     }
 
     return (
@@ -52,9 +65,9 @@ const ShowDetail = () => {
                     <div className='w-full relative'>
                        <img src={`https://image.tmdb.org/t/p/w342${data.backdrop_path}`} alt="" className='w-full opacity-60' />
                         <img src={`https://image.tmdb.org/t/p/w342${data.poster_path}`} alt="" className='h-[150px] object-cover absolute -bottom-16 mx-5 shadow-md rounded-md' /> 
-                        <button className={`bg-[#da0009] text-[#fff1fc] px-4 rounded-sm font-bold py-2 flex w-fit items-center justify-center gap-1 absolute bottom-2 right-2 hover:opacity-90 cursor-pointer disabled:bg-gray-500 ${!data.backdrop_path && 'left-32 -bottom-4'}`} onClick={addToWatchList} disabled={isInWatchList}>
-                            <ListVideo size={17} color='#fff1fc' strokeWidth={3} className='mt-[2px]' /> 
-                            <p>Add to WatchList</p>
+                        <button className={`bg-[#da0009] text-[#fff1fc] px-4 rounded-sm font-bold py-2 flex w-45 items-center justify-center gap-1 absolute bottom-2 right-2 hover:opacity-90 cursor-pointer disabled:bg-gray-500 ${!data.backdrop_path && 'left-32 -bottom-4'}`} onClick={addToWatchList} disabled={isInWatchList}>
+                            {isAdding ? <Loader /> : <><ListVideo size={17} color='#fff1fc' strokeWidth={3} className='mt-[2px]' /> 
+                            <p>Add to WatchList</p></>}
                         </button>
                     </div>
                     

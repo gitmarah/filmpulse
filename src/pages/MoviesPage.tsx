@@ -20,12 +20,12 @@ const MoviesPage = () => {
         <Header />
         {isLoading ? <p>Loading...</p> : <main className='bg-[#f0ffff] max-w-[100vw] min-h-[100vh] pt-20 pb-4 flex flex-col items-center gap-2'>
             {type === "popular" ? <h2 className='font-extrabold text-[#da0009] flex items-center text-lg'>Popular Movies</h2> : type === "top_rated" ? <h2 className='font-extrabold text-[#da0009] flex items-center text-lg'>Top Rated Movies</h2> : type === "upcoming" ? <h2 className='font-extrabold text-[#da0009] flex items-center text-lg'>Upcoming Movies</h2> : ""}
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl">
+            <div className="flex flex-wrap justify-center gap-2 max-w-4xl">
                 {data && data.results.map((movie: generalMovieType) => {
                     console.log(movie)
                     return (
                     <Link to={`/movie/${movie.id}`}>
-                        <article className="flex-shrink-0 w-[120px] bg-[#170000] shadow-md rounded overflow-clip relative">
+                        <article className="flex-shrink-0 w-[100px] bg-[#170000] shadow-md rounded overflow-clip relative">
                             <img
                                 src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                                 alt={movie.title}

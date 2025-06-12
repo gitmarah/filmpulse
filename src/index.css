@@ -9,3 +9,7 @@ body::-webkit-scrollbar,
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+@theme {
+  --default-font-family: "Outfit", sans-serif;
+}

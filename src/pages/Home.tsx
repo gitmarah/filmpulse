@@ -37,15 +37,15 @@ const Home = () => {
         <>
             <Header />
             <main className='flex flex-col items-center justify-start min-h-[100vh] w-full bg-[#f0ffff] pt-20 pb-4 gap-[0.4rem]'>
-                <section className='w-full max-w-3xl flex justify-center mt-1'>
-                    <input className='border border-e-0 border-[#170000] w-[65%] text-lg rounded-s-md py-1 px-2 focus:outline-none' type="text" placeholder='Search for movies' name="" id="" autoFocus value={query} onChange={(e) => setQuery(e.target.value)}/>
-                    <button className='bg-[#da0009] w-[20%] text-lg rounded-e-md py-1 px-2 focus:outline-none text-[#fff1fc] font-bold cursor-pointer transition-all hover:opacity-90' onClick={searchQuery}>Search</button>
+                <section className='w-full max-w-2xl flex justify-center mt-1'>
+                    <input className='text-[1rem] border border-e-0 border-[#ddd] inset-shadow-sm w-[60%] text-lg rounded-s-sm py-1 px-2 focus:outline-none text-[#170000]' type="text" placeholder='Search for movies' name="" id="" autoFocus value={query} onChange={(e) => setQuery(e.target.value)}/>
+                    <button className='bg-[#da0009] w-18 text-lg rounded-e-sm py-1 px-2 focus:outline-none text-[#fff1fc] font-semibold cursor-pointer transition-all hover:opacity-90 text-[1rem] flex justify-center' onClick={searchQuery}>Search</button>
                 </section>
                 {isActive &&
-                    <div className="flex flex-wrap justify-center gap-2 max-w-[100vw]">
+                    <div className="flex flex-wrap justify-center gap-2 max-w-4xl px-3 py-1">
                         {result && result.map((movie) => (
                             <Link to={`/${movie.type}/${movie.id}`}>
-                                <article className="flex-shrink-0 w-[120px] bg-[#170000] shadow-md rounded overflow-clip relative">
+                                <article className="flex-shrink-0 w-[100px] bg-[#170000] shadow-md rounded overflow-clip relative">
                                     <img
                                         src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                                         alt={movie.title}
@@ -61,7 +61,7 @@ const Home = () => {
                     </div>
                 }
                 {(query === "" || !isActive) && <div className='max-w-4xl'>
-                {popularMovies?.data && <section id="popular-movies" className='flex flex-col gap-[0.4rem]'>
+                {popularMovies?.data && <section id="popular-movies" className='flex flex-col gap-[0.2rem] mb-2 text-[0.9rem]'>
                     <Link className='font-bold text-[#da0009] flex items-center' to={"/movies/popular"}>
                         <h2>Popular Movies</h2>
                         <ChevronRight strokeWidth={3} size={20}/>
@@ -84,7 +84,7 @@ const Home = () => {
                         ))}
                     </div>
                 </section>}
-                {topRatedMovies?.data?.results && <section id="top-rated-movies" className='flex flex-col gap-[0.4rem]'>
+                {topRatedMovies?.data?.results && <section id="top-rated-movies" className='flex flex-col gap-[0.2rem] mb-2 text-[0.9rem]'>
                     <Link className='font-bold text-[#da0009] flex items-center' to={"/movies/top_rated"}>
                         <h2>Top Rated Movies</h2>
                         <ChevronRight strokeWidth={3} size={20}/>
@@ -107,7 +107,7 @@ const Home = () => {
                         ))}
                     </div>
                 </section>}
-                {upcomingMovies?.data?.results && <section id="upcoming-movies" className='flex flex-col gap-[0.4rem]'>
+                {upcomingMovies?.data?.results && <section id="upcoming-movies" className='flex flex-col gap-[0.2rem] mb-2 text-[0.9rem]'>
                     <Link className='font-bold text-[#da0009] flex items-center' to={"/movies/upcoming"}>
                         <h2>Upcoming Movies</h2>
                         <ChevronRight strokeWidth={3} size={20}/>
@@ -130,7 +130,7 @@ const Home = () => {
                         ))}
                     </div>
                 </section>}
-                {topRatedShows?.data && <section id="top-rated-shows" className='flex flex-col gap-[0.4rem]'>
+                {topRatedShows?.data && <section id="top-rated-shows" className='flex flex-col gap-[0.2rem] mb-2 text-[0.9rem]'>
                     <Link className='font-bold text-[#da0009] flex items-center' to={"/shows/top_rated"}>
                         <h2>Top Rated Shows</h2>
                         <ChevronRight strokeWidth={3} size={20}/>
@@ -154,7 +154,7 @@ const Home = () => {
                         ))}
                     </div>
                 </section>}
-                {popularShows?.data && <section id="popular-shows" className='flex flex-col gap-[0.4rem]'>
+                {popularShows?.data && <section id="popular-shows" className='flex flex-col gap-[0.2rem] mb-2 text-[0.9rem]'>
                     <Link className='font-bold text-[#da0009] flex items-center' to={"/shows/popular"}>
                         <h2>Popular Shows</h2>
                         <ChevronRight strokeWidth={3} size={20}/>

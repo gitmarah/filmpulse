@@ -31,9 +31,9 @@ const Header = () => {
 
     return (
         <header className='fixed flex text-[#fff1fc] bg-[#170000] justify-between items-center top-0 left-0 right-0 p-4 z-50'>
-            <h1 className='font-black text-2xl'><Link to="/">filmpulse</Link></h1>
-            <div>
-               {isLoading ? <p></p> : user && userData ? <div className='flex gap-3'><Link to="/profile" className='bg-[#fff1fc] text-[#170000] w-[40px] h-[40px] rounded-full hover:opacity-95 font-bold transition-all overflow-clip border-2 border-[#fff1fc]'><img className='w-full' src={userData.imageUrl} alt="" /></Link><button onClick={signOut} className='bg-[#fff1fc] text-[#170000] px-3 py-2 rounded-sm hover:opacity-95 font-bold transition-all cursor-pointer'>Signout</button></div> : <div className='flex gap-3'><Link to="/signin" className='bg-[#fff1fc] text-[#170000] px-3 py-2 rounded-sm hover:opacity-95 font-bold transition-all'>Signin</Link><Link to="/signup" className='bg-[#fff1fc] text-[#170000] px-3 py-2 rounded-sm hover:opacity-95 font-bold transition-all'>Create Account</Link></div>} 
+            <h1 className='font-extrabold text-xl'><Link to="/">filmpulse</Link></h1>
+            <div className='text-[0.9rem]'>
+               {isLoading ? <p></p> : user && userData ? <div className='flex gap-3'><Link to="/profile" className='bg-[#fff1fc] text-[#170000] w-[40px] h-[40px] rounded-full hover:opacity-95 font-bold transition-all overflow-clip border-2 border-[#fff1fc]'><img className='w-full' src={userData.imageUrl} alt="" /></Link><button onClick={signOut} className='bg-[#fff1fc] text-[#170000] px-3 py-2 rounded-sm hover:opacity-95 font-bold transition-all cursor-pointer'>Signout</button></div> : <div className='flex gap-3'><Link to="/signin" className='bg-[#fff1fc] text-[#170000] px-3 py-2 rounded-sm hover:opacity-95 transition-all'>Signin</Link></div>} 
             </div>
             
         </header>
