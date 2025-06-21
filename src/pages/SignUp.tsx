@@ -103,7 +103,7 @@ const SignUp = () => {
             {displayMessage.message &&
             <DisplayMessage displayMessage={displayMessage} setDisplayMessage={setDisplayMesage}/>
             }
-            <form onSubmit={signUpFunction} className="flex flex-col items-center gap-[0.7rem] min-w-70">
+            <form onSubmit={signUpFunction} className="flex flex-col items-center gap-[0.5rem] min-w-70">
             <div>
             <h1 className="text-[1rem] mb-2">Create your <span className="font-extrabold">filmpulse</span> account!</h1>
             </div>
@@ -128,7 +128,7 @@ const SignUp = () => {
             />
             <label
                 htmlFor="firstname"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.firstname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.firstname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.firstname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.firstname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Firstname
             </label>
@@ -144,7 +144,7 @@ const SignUp = () => {
             />
             <label
                 htmlFor="lastname"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.lastname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.lastname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.lastname === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.lastname && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Lastname
             </label>
@@ -160,7 +160,7 @@ const SignUp = () => {
             />
             <label
                 htmlFor="email"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.email === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.email && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.email === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.email && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Email
             </label>
@@ -177,7 +177,7 @@ const SignUp = () => {
                 />
                 <label
                     htmlFor="password"
-                    className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.password === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.password && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                    className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.password === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.password && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
                 >
                     Password
                 </label>
@@ -196,7 +196,7 @@ const SignUp = () => {
                 />
                 <label
                     htmlFor="confirmpassword"
-                    className={`bg-[#f0ffff] absolute left-3 pointer-events-none w-fit cursor-text ${formState.confirmpassword === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.confirmpassword && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                    className={`bg-[#f0ffff] absolute left-3 pointer-events-none w-fit cursor-text ${formState.confirmpassword === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.confirmpassword && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
                 >
                     Confirm Password
                 </label>

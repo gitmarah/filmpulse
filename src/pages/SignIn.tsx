@@ -66,7 +66,7 @@ const SignIn = () => {
     <>
     <main className="w-full h-[100vh] flex flex-col justify-center items-center gap-1 bg-[#f0ffff]">
       {displayMessage.message && <DisplayMessage displayMessage={displayMessage} setDisplayMessage={setDisplayMesage} />}
-      <form onSubmit={signInFunction} className="flex flex-col items-center gap-[0.7rem] min-w-70">
+      <form onSubmit={signInFunction} className="flex flex-col items-center gap-[0.5rem] min-w-70">
         <div>
           <h1 className="text-2xl text-center font-black text-[#170000]">filmpulse</h1>
           <p className="text-sm">Sign in to your filmpulse account!</p>
@@ -82,7 +82,7 @@ const SignIn = () => {
             />
             <label
                 htmlFor="email"
-                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.email === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.email && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.email === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.email && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
             >
                 Email
             </label>
@@ -99,7 +99,7 @@ const SignIn = () => {
                 />
                 <label
                     htmlFor="password"
-                    className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.password === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.password && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
+                    className={`bg-[#f0ffff] pointer-events-none  absolute left-3 w-fit cursor-text ${formState.password === "" && "top-[0.5rem] text-[0.9rem] text-[#9ca3af]"}  transition-all peer-focus:mt-1 peer-focus:text-[12px] peer-focus:-top-2.5 peer-focus:px-1 peer-focus:text-[#da0009] ${formState.password && "text-[12px] -top-2.5 px-1 text-[#170000]"}`}
                 >
                     Password
                 </label>
