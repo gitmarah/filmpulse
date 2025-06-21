@@ -103,7 +103,7 @@ const SignUp = () => {
             {displayMessage.message &&
             <DisplayMessage displayMessage={displayMessage} setDisplayMessage={setDisplayMesage}/>
             }
-            <form onSubmit={signUpFunction} className="flex flex-col items-center gap-[0.5rem] min-w-70">
+            <form onSubmit={signUpFunction} className="flex flex-col items-center gap-[0.7rem] min-w-70">
             <div>
             <h1 className="text-[1rem] mb-2">Create your <span className="font-extrabold">filmpulse</span> account!</h1>
             </div>

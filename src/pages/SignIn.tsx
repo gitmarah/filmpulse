@@ -66,7 +66,7 @@ const SignIn = () => {
     <>
     <main className="w-full h-[100vh] flex flex-col justify-center items-center gap-1 bg-[#f0ffff]">
       {displayMessage.message && <DisplayMessage displayMessage={displayMessage} setDisplayMessage={setDisplayMesage} />}
-      <form onSubmit={signInFunction} className="flex flex-col items-center gap-2 min-w-70">
+      <form onSubmit={signInFunction} className="flex flex-col items-center gap-[0.7rem] min-w-70">
         <div>
           <h1 className="text-2xl text-center font-black text-[#170000]">filmpulse</h1>
           <p className="text-sm">Sign in to your filmpulse account!</p>
